@@ -1,0 +1,33 @@
+id: EXP-XXXX
+slug: project-slug
+phase: candidate
+created: 1970-01-01T00:00:00Z
+updated: 1970-01-01T00:00:00Z
+
+source:
+  surface: slack
+  channel: "#general"
+  message_ts: ""
+  marked_by: ""
+  marked_with: "🧪"
+  url: https://example.invalid/owner/repo
+
+repo:
+  url: https://example.invalid/owner/repo
+  host: github
+  ref: null
+  commit: null
+  license: null
+
+research: null
+build: null
+experiment: null
+package: null
+report: null
+
+outputs:
+  gist_url: null
+  blog_post_id: null
+  blog_status: draft
+
+events_emitted: []

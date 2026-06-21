@@ -1,0 +1,47 @@
+facility: forge-state
+version: 0.1
+root: ~/forge
+
+intake:
+  surface: slack
+  channels: ["#general"]
+  marker: "🧪"
+  markers_self_only: true
+
+sandbox:
+  runtime: docker
+  base_images:
+    node: node:20
+    python: python:3.12
+    go: golang:1.22
+    rust: rust:1.79
+    generic: ubuntu:24.04
+  egress: registries-only
+  cpu: 4
+  memory: 8g
+  per_repo_timeout_s: 1800
+  night_budget_s: 14400
+
+experiment:
+  mode: hybrid
+
+packaging:
+  emit_bundle: true
+  push_image: true
+  registry: ghcr.io/davidolsson
+
+surfaces:
+  gist: { enabled: true, auto: true }
+  blog: { target: scsiwyg, auto: true }
+  work_state: { enabled: true }
+
+durability:
+  # Locked decision: github private mirror. Set the remote URL before relying on
+  # the mirror — leave null until the user creates the private repo.
+  mirror:
+    kind: github
+    remote: null  # e.g. git@github.com:davidolsson/forge-mirror.git
+
+secrets:
+  store: sops-age
+  refs: [anthropic, slack, github, scsiwyg, ghcr]

@@ -1,0 +1,85 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://atomic47.co/forge-state/schemas/manifest.schema.yaml"
+title: ForgeManifest
+type: object
+required: [facility, version, root, intake, sandbox, experiment, packaging, surfaces, durability, secrets]
+additionalProperties: false
+properties:
+  facility: { const: forge-state }
+  version: { type: string }
+  root: { type: string }
+  intake:
+    type: object
+    required: [surface, channels, marker, markers_self_only]
+    additionalProperties: false
+    properties:
+      surface: { type: string, enum: [slack] }
+      channels:
+        type: array
+        items: { type: string }
+        minItems: 1
+      marker: { type: string }
+      markers_self_only: { type: boolean }
+  sandbox:
+    type: object
+    required: [runtime, base_images, egress, cpu, memory, per_repo_timeout_s, night_budget_s]
+    additionalProperties: false
+    properties:
+      runtime: { type: string, enum: [docker] }
+      base_images:
+        type: object
+        additionalProperties: { type: string }
+      egress: { type: string, enum: [registries-only, none, open] }
+      cpu: { type: integer, minimum: 1 }
+      memory: { type: string }
+      per_repo_timeout_s: { type: integer, minimum: 60 }
+      night_budget_s: { type: integer, minimum: 60 }
+  experiment:
+    type: object
+    additionalProperties: false
+    properties:
+      mode: { type: string, enum: [hybrid, template-only, freeform] }
+  packaging:
+    type: object
+    required: [emit_bundle, push_image]
+    additionalProperties: false
+    properties:
+      emit_bundle: { type: boolean }
+      push_image: { type: boolean }
+      registry: { type: [string, "null"] }
+  surfaces:
+    type: object
+    additionalProperties: false
+    properties:
+      gist:
+        type: object
+        properties:
+          enabled: { type: boolean }
+          auto: { type: boolean }
+      blog:
+        type: object
+        properties:
+          target: { type: string }
+          auto: { type: boolean }
+      work_state:
+        type: object
+        properties:
+          enabled: { type: boolean }
+  durability:
+    type: object
+    additionalProperties: false
+    properties:
+      mirror:
+        type: [object, "null"]
+        properties:
+          kind: { type: string, enum: [github, gitea, local] }
+          remote: { type: [string, "null"] }
+  secrets:
+    type: object
+    required: [store, refs]
+    additionalProperties: false
+    properties:
+      store: { type: string }
+      refs:
+        type: array
+        items: { type: string }
