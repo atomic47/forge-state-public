@@ -4,7 +4,7 @@ root: ~/forge
 
 intake:
   surface: slack
-  channels: ["#general"]
+  channels: ["#development"]
   marker: "🧪"
   markers_self_only: true
 

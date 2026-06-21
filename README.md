@@ -41,7 +41,7 @@ Machinery lives in `state/` (visible), not `.state/` — forge-state intentional
 |---|---|
 | Packaging push | YES — push to `ghcr.io/davidolsson` (token via `$GHCR_TOKEN`) |
 | Blog publishing | Auto-publish to scsiwyg |
-| Intake channel + marker | `#general` with `🧪`, self-only |
+| Intake channel + marker | `#development` with `🧪`, self-only |
 | Durability mirror | GitHub private repo — **you must set `durability.mirror.remote` in `~/forge/manifest.yaml`** before relying on the mirror; it is left `null` after init |
 | Facility location | `~/forge/` visible, `state/` (not `.state/`) for machinery |
 
@@ -55,7 +55,7 @@ Machinery lives in `state/` (visible), not `.state/` — forge-state intentional
 ## The skills
 
 - `/forge-state` — substrate spine; only writer to disk.
-- `/forge-harvester-slack` — drains 🧪 reactions in `#general` into candidate records.
+- `/forge-harvester-slack` — drains 🧪 reactions in `#development` into candidate records.
 - `/forge-researcher` — fills what / who / why / comparables / license.
 - `/forge-builder` — clones, pins, classifies, builds in Docker. Outcome: built or build-failed (both advance).
 - `/forge-experimenter` — picks a §10 template, runs a bounded experiment in the sandbox.

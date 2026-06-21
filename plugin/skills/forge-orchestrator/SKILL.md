@@ -36,7 +36,7 @@ Spec §13. No separate queue file: **phase is the queue.** Any non-terminal expe
    - Per-experiment wall clock = `manifest.sandbox.per_repo_timeout_s`; on overrun, signal the worker, record partial state, move on.
    - Night budget = `manifest.sandbox.night_budget_s`; on overrun, stop dispatching new work, carry remaining queue forward via `state.json.carry_forward`.
 6. **Run log.** Append a line per experiment to `state/logs/run-YYYY-MM-DD.txt` via `forge-state`.
-7. **Summary.** Compose one-line summary: "tonight: N built, M build-failed, K carried, P published". Hand to `forge-publisher` to post into the intake channel (`#general`).
+7. **Summary.** Compose one-line summary: "tonight: N built, M build-failed, K carried, P published". Hand to `forge-publisher` to post into the intake channel (`#development`).
 8. **Refresh** `state/state.json` (counts, last_run, last_cursor, carry_forward).
 9. Release lock.
 

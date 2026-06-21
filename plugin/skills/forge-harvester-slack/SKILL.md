@@ -1,11 +1,11 @@
 ---
 name: forge-harvester-slack
-description: Use when the orchestrator's nightly walk begins, or when the user says "/forge-harvester-slack", "check for new forge candidates", "any new lab-bench marks", or asks to drain Slack reactions into experiments. Reads David's own 🧪 reactions in #general (per locked manifest), creates new candidate experiment records via forge-state, and advances the per-channel cursor in state/cursor.yaml.
+description: Use when the orchestrator's nightly walk begins, or when the user says "/forge-harvester-slack", "check for new forge candidates", "any new lab-bench marks", or asks to drain Slack reactions into experiments. Reads David's own 🧪 reactions in #development (per locked manifest), creates new candidate experiment records via forge-state, and advances the per-channel cursor in state/cursor.yaml.
 ---
 
 # forge-harvester-slack — intake from Slack reactions
 
-The trigger is the reaction, not the post (spec §8). David marks a project post with 🧪 in #general; this skill enqueues it as a candidate.
+The trigger is the reaction, not the post (spec §8). David marks a project post with 🧪 in #development; this skill enqueues it as a candidate.
 
 ## When to use
 
@@ -14,7 +14,7 @@ The trigger is the reaction, not the post (spec §8). David marks a project post
 
 ## Inputs
 
-- `manifest.yaml` → `intake.channels` (locked: `["#general"]`), `intake.marker` (locked: `🧪`), `intake.markers_self_only: true`.
+- `manifest.yaml` → `intake.channels` (locked: `["#development"]`), `intake.marker` (locked: `🧪`), `intake.markers_self_only: true`.
 - `state/cursor.yaml` → per-channel last-processed reaction timestamp.
 - Slack tokens from the host secret store (never enter the data plane).
 

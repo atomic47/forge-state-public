@@ -62,7 +62,7 @@
   <div class="rise4" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:24px">
     <div style="font-family:var(--fm);font-size:var(--t-micro);letter-spacing:.22em;text-transform:uppercase;color:var(--faint);align-self:flex-start">Inbound — one Slack reaction</div>
     <div style="width:100%;border:1px solid var(--line2);background:var(--ink2);padding:22px 24px;display:flex;align-items:center;gap:18px;font-family:var(--fh);font-size:var(--t-small);color:var(--dim)">
-      <span style="font-family:var(--fm);font-size:var(--t-micro);color:var(--teal)">#general</span>
+      <span style="font-family:var(--fm);font-size:var(--t-micro);color:var(--teal)">#development</span>
       <span style="flex:1;font-style:italic">"new SIMD grep — github.com/owner/ripgrep-turbo"</span>
       <span style="font-size:28px">🧪</span>
     </div>
@@ -139,7 +139,7 @@
   <div class="rise3" style="flex:1;display:flex;align-items:center;justify-content:center;gap:54px;margin-top:30px">
     <div style="flex:0 0 420px;border:1.5px solid var(--yellow);background:linear-gradient(180deg,rgba(246,172,45,.10),rgba(246,172,45,.02));box-shadow:0 0 60px rgba(246,172,45,.18);padding:48px 36px;display:flex;flex-direction:column;gap:18px;text-align:center;min-height:340px">
       <div style="font-family:var(--fh);font-weight:600;font-size:54px;letter-spacing:.04em;color:var(--yellow)">MARK</div>
-      <div style="font-family:var(--fh);font-size:var(--t-small);color:var(--paper);line-height:1.4">React with 🧪 on a project post in <span style="font-family:var(--fm)">#general</span>.</div>
+      <div style="font-family:var(--fh);font-size:var(--t-small);color:var(--paper);line-height:1.4">React with 🧪 on a project post in <span style="font-family:var(--fm)">#development</span>.</div>
       <div style="font-family:var(--fm);font-size:var(--t-micro);color:var(--faint);margin-top:auto;line-height:1.55">the reaction is the trigger ·<br>self-only · idempotent</div>
     </div>
     <div style="color:var(--line2);font-size:54px">→</div>
@@ -340,7 +340,7 @@
       <div style="border-top:3px solid var(--teal);padding-top:12px;font-family:var(--fm);font-size:var(--t-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)">Intake</div>
       <div style="border:1px solid var(--line2);padding:18px 18px;display:flex;flex-direction:column;gap:6px">
         <div style="font-family:var(--fm);font-size:var(--t-mono-sm);color:var(--paper)">forge-harvester-slack</div>
-        <div style="font-family:var(--fh);font-size:var(--t-small);color:var(--dim);line-height:1.4">Drains 🧪 reactions in <span style="font-family:var(--fm)">#general</span> into candidates; advances the cursor.</div>
+        <div style="font-family:var(--fh);font-size:var(--t-small);color:var(--dim);line-height:1.4">Drains 🧪 reactions in <span style="font-family:var(--fm)">#development</span> into candidates; advances the cursor.</div>
       </div>
     </div>
     <!-- Research -->
@@ -626,7 +626,7 @@ docker compose up</pre>
 </section>
 
 <!-- ============================ SLIDE 13 ============================ -->
-<section data-label="Install & locked decisions" data-speaker-notes="Three install paths, all flowing through Claude Code's plugin system because this repo is a one-plugin marketplace. The locked configuration on the right is the set of decisions the spec called out as open — they're now closed. Channel is the general channel with the test-tube emoji, self-only so a colleague's reaction doesn't enqueue a build. Blog auto-publishes. The GHCR push is on. The mirror remote is left null on init; you set it yourself once your private repo exists." style="background:var(--ink);color:var(--paper);font-family:var(--fh);padding:96px var(--px) 150px;display:flex;flex-direction:column;overflow:hidden;position:relative">
+<section data-label="Install & locked decisions" data-speaker-notes="Three install paths, all flowing through Claude Code's plugin system because this repo is a one-plugin marketplace. The locked configuration on the right is the set of decisions the spec called out as open — they're now closed. Channel is the development channel with the test-tube emoji, self-only so a colleague's reaction doesn't enqueue a build. Blog auto-publishes. The GHCR push is on. The mirror remote is left null on init; you set it yourself once your private repo exists." style="background:var(--ink);color:var(--paper);font-family:var(--fh);padding:96px var(--px) 150px;display:flex;flex-direction:column;overflow:hidden;position:relative">
   <div class="rise" style="display:flex;align-items:center;gap:14px;font-size:var(--t-eyebrow);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:30px">
     <span style="width:9px;height:9px;background:var(--yellow)"></span>
     <span>§ 13 · Install &amp; locked decisions</span>
@@ -660,7 +660,7 @@ bash scripts/init-facility.sh
         <div style="display:grid;grid-template-columns:1fr 1.4fr;background:var(--ink2);border-bottom:1px solid var(--line2);padding:14px 18px;font-family:var(--fm);font-size:var(--t-micro);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)"><div>item</div><div>value</div></div>
         <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--line2);padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Packaging push</div><div style="color:var(--green);font-family:var(--fm);font-size:var(--t-mono-sm)">YES — ghcr.io/davidolsson</div></div>
         <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--line2);padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Blog publishing</div><div style="color:var(--green);font-family:var(--fm);font-size:var(--t-mono-sm)">auto-publish · scsiwyg</div></div>
-        <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--line2);padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Channel + marker</div><div style="color:var(--teal);font-family:var(--fm);font-size:var(--t-mono-sm)">#general · 🧪 · self-only</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--line2);padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Channel + marker</div><div style="color:var(--teal);font-family:var(--fm);font-size:var(--t-mono-sm)">#development · 🧪 · self-only</div></div>
         <div style="display:grid;grid-template-columns:1fr 1.4fr;border-bottom:1px solid var(--line2);padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Durability mirror</div><div style="color:var(--yellow);font-family:var(--fm);font-size:var(--t-mono-sm)">GitHub private · set manually</div></div>
         <div style="display:grid;grid-template-columns:1fr 1.4fr;padding:16px 18px;font-family:var(--fh);font-size:var(--t-small)"><div style="color:var(--paper)">Facility location</div><div style="color:var(--teal);font-family:var(--fm);font-size:var(--t-mono-sm)">~/forge/ visible · state/ subfolder</div></div>
       </div>
@@ -696,7 +696,7 @@ bash scripts/init-facility.sh
     <div style="border:1.5px solid var(--green);background:linear-gradient(180deg,rgba(123,168,107,.08),rgba(123,168,107,.01));padding:30px 30px;width:100%;display:flex;flex-direction:column;gap:14px">
       <div style="font-family:var(--fm);font-size:var(--t-micro);color:var(--green);letter-spacing:.2em;text-transform:uppercase">tonight's run</div>
       <div style="font-family:var(--fh);font-size:32px;color:var(--paper);font-weight:500">4 built · 1 build-failed · 1 carried</div>
-      <div style="font-family:var(--fm);font-size:var(--t-micro);color:var(--faint)">posted to #general · 6 gists · 5 blog posts · 4 GHCR images · 11 work-state events</div>
+      <div style="font-family:var(--fm);font-size:var(--t-micro);color:var(--faint)">posted to #development · 6 gists · 5 blog posts · 4 GHCR images · 11 work-state events</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;width:100%;margin-top:6px">
       <div style="border:1px solid var(--line2);padding:14px 18px;display:flex;align-items:center;gap:14px;font-family:var(--fm);font-size:var(--t-mono-sm);color:var(--paper)"><span style="color:var(--yellow);width:22px">▸</span>EXP-0084 · ripgrep-turbo <span style="color:var(--green);margin-left:auto;font-size:var(--t-micro)">published</span></div>
